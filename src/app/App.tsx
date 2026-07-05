@@ -573,7 +573,7 @@ function HomePage({ products, onView, onAddToCart, onToggleWishlist, wishlist, o
 
 // ─── CATALOG ─────────────────────────────────────────────────────────────────
 function CatalogPage({ products, onView, onAddToCart, onToggleWishlist, wishlist }) {
-  const [filterOpen, setFilterOpen] = useState(true);
+  const [filterOpen, setFilterOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Todas");
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [maxPrice, setMaxPrice] = useState(600);
@@ -623,9 +623,9 @@ function CatalogPage({ products, onView, onAddToCart, onToggleWishlist, wishlist
         </div>
       </div>
 
-      <div className="flex px-8 md:px-16">
+      <div className="relative px-8 md:px-16">
         {filterOpen && (
-          <aside className="w-52 flex-shrink-0 pr-8 pt-8 space-y-8 border-r border-[#111111]/6">
+          <aside className="absolute top-0 left-8 z-20 w-64 bg-white shadow-xl border border-[#111111]/10 p-6 rounded-md">
             <div>
               <p className="text-[10px] tracking-widest uppercase text-[#111111] mb-3">Categoría</p>
               {cats.map(cat => (
